@@ -1,11 +1,5 @@
-tocenize
-========
-
-[![MIT license](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
-[![GitHub release](https://img.shields.io/github/release/nochso/tocenize.svg)](https://github.com/nochso/tocenize/releases)
-[![Go Report Card](https://goreportcard.com/badge/github.com/nochso/tocenize)](https://goreportcard.com/report/github.com/nochso/tocenize)
-[![Build Status](https://travis-ci.org/nochso/tocenize.svg?branch=master)](https://travis-ci.org/nochso/tocenize)
-[![Coverage Status](https://coveralls.io/repos/github/nochso/tocenize/badge.svg?branch=master)](https://coveralls.io/github/nochso/tocenize?branch=master)
+markdown-toc
+============
 
 Insert and maintain a table of contents in Markdown files.
 
@@ -22,7 +16,7 @@ Insert and maintain a table of contents in Markdown files.
 Features
 --------
 
-tocenize generates a TOC (table of content) from Markdown files and inserts or
+markdown-toc generates a TOC (table of content) from Markdown files and inserts or
 updates it in the given file.
 
 - Cross-platform command line utility
@@ -50,19 +44,19 @@ Make sure to place it somewhere in your `$PATH`.
 If you have a working Go environment, simply run:
 
 ```
-go install github.com/nochso/tocenize/cmd/tocenize
+go install github.com/gtrafimenkov/markdown-toc/cmd/markdown-toc
 ```
 
-If you've added `$GOPATH/bin` to your `$PATH`, you can now run `tocenize` from
+If you've added `$GOPATH/bin` to your `$PATH`, you can now run `markdown-toc` from
 anywhere.
 
 Usage
 -----
 
-The output of `tocenize -h` should be self explanatory:
+The output of `markdown-toc -h` should be self explanatory:
 
 ```
-tocenize [options] FILE...
+markdown-toc [options] FILE...
 
   -d    print full diff to stdout
   -e    update only existing TOC (no insert)
@@ -97,8 +91,3 @@ License
 -------
 
 This project is released under the [MIT license](LICENSE).
-
-
-[changelog]: CHANGELOG.md
-[releases]: https://github.com/nochso/tocenize/releases
-[Go]: https://golang.org

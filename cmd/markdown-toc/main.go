@@ -10,7 +10,7 @@ import (
 	"strings"
 
 	"github.com/fatih/color"
-	"github.com/nochso/tocenize"
+	"github.com/gtrafimenkov/markdown-toc"
 	"github.com/pmezard/go-difflib/difflib"
 )
 
