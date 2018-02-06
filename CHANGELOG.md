@@ -22,4 +22,5 @@ Security   invite users to upgrade in case of vulnerabilities.
 
 ### Changed
 
+- Don't exit with non-zero exit code in the update mode.
 - project forked from [nochso/tocenize](https://github.com/nochso/tocenize)
