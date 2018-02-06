@@ -15,7 +15,7 @@ import (
 )
 
 var (
-	VERSION  = "?"
+	VERSION  = "0.0.1"
 	exitCode int
 )
 

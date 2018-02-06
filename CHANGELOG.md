@@ -7,6 +7,7 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/) and this
 project adheres to [Semantic Versioning](http://semver.org/).
 
 - [Unreleased](#Unreleased)
+- [0.0.1 - 2018-02-07](#001---2018-02-07)
 
 <!--
 Added      new features.
@@ -20,7 +21,12 @@ Security   invite users to upgrade in case of vulnerabilities.
 [Unreleased]
 ------------
 
-### Changed
+[0.0.1] - 2018-02-07
+--------------------
 
+### Fixed
+- Link generation for headers starting with unicode characters.
+
+### Changed
 - Don't exit with non-zero exit code in the update mode.
-- project forked from [nochso/tocenize](https://github.com/nochso/tocenize)
+- Project forked from [nochso/tocenize](https://github.com/nochso/tocenize).
