@@ -21,6 +21,10 @@ Security   invite users to upgrade in case of vulnerabilities.
 [Unreleased]
 ------------
 
+### Fixed
+
+- Generation of TOC with unicode characters
+
 [0.0.1] - 2018-02-07
 --------------------
 
