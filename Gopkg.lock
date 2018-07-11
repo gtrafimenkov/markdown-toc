@@ -4,8 +4,8 @@
 [[projects]]
   name = "github.com/fatih/color"
   packages = ["."]
-  revision = "570b54cabe6b8eb0bc2dfce68d964677d63b5260"
-  version = "v1.5.0"
+  revision = "5b77d2a35fb0ede96d138fc9a99f5c9b6aef11b4"
+  version = "v1.7.0"
 
 [[projects]]
   name = "github.com/mattn/go-colorable"
@@ -32,20 +32,20 @@
   version = "v1.0.0"
 
 [[projects]]
-  branch = "master"
   name = "github.com/writeas/go-strip-markdown"
   packages = ["."]
-  revision = "ef10de33195f91b404b83bfd74f93e045c375ff6"
+  revision = "135c36d3fc27c66a8cfe556f1d6d33d3e84d5213"
+  version = "v2.0"
 
 [[projects]]
   branch = "master"
   name = "golang.org/x/sys"
   packages = ["unix"]
-  revision = "37707fdb30a5b38865cfb95e5aab41707daec7fd"
+  revision = "1b2967e3c290b7c545b3db0deeda16e9be4f98a2"
 
 [solve-meta]
   analyzer-name = "dep"
   analyzer-version = 1
-  inputs-digest = "41df201796704dc37123283dc02f8036d29ac1c95799c11583fdac9de86ff503"
+  inputs-digest = "bf130b379e5c5bd7468b06808d99cef95f51b144ef304bb78811129356cc84eb"
   solver-name = "gps-cdcl"
   solver-version = 1
