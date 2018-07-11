@@ -5,8 +5,6 @@ Insert and maintain a table of contents in Markdown files.
 
 - [Features](#features)
 - [Installation](#installation)
-	- [Pre-compiled binaries](#pre-compiled-binaries)
-	- [From source](#from-source)
 - [Usage](#usage)
 - [Alternatives](#alternatives)
 - [Changes](#changes)
@@ -32,24 +30,10 @@ updates it in the given file.
 Installation
 ------------
 
-
-### Pre-compiled binaries
-
-Compiled binaries are available on the [releases page][releases].
-
-Make sure to place it somewhere in your `$PATH`.
-
-
-### From source
-
-If you have a working Go environment, simply run:
-
 ```
+go get -u github.com/gtrafimenkov/markdown-toc
 go install github.com/gtrafimenkov/markdown-toc/cmd/markdown-toc
 ```
-
-If you've added `$GOPATH/bin` to your `$PATH`, you can now run `markdown-toc` from
-anywhere.
 
 Usage
 -----
