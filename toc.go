@@ -23,14 +23,14 @@ func (t TOC) MinDepth() int {
 	return m
 }
 
-func (t TOC) String() string {
+func (t TOC) String(style Style) string {
 	minDepth := t.MinDepth()
 	buf := &bytes.Buffer{}
 	for i, h := range t.Headings {
 		if i > 0 {
 			buf.WriteString(t.eol)
 		}
-		buf.WriteString(h.string(minDepth))
+		buf.WriteString(h.GetMarkdown(minDepth, style))
 	}
 	return buf.String()
 }
@@ -55,8 +55,9 @@ func NewTOC(doc Document, pj Job) TOC {
 		}
 		if heading != nil {
 			// increment counter each time we see this anchor
-			count, _ := anchors[heading.Anchor()]
-			anchors[heading.Anchor()] = count + 1
+			anchor := heading.Anchor(pj.Style)
+			count, _ := anchors[anchor]
+			anchors[anchor] = count + 1
 			heading.UniqueCounter = count
 
 			// remember only at desired depth

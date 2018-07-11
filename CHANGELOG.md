@@ -21,6 +21,10 @@ Security   invite users to upgrade in case of vulnerabilities.
 [Unreleased]
 ------------
 
+### Added
+
+- Ability to create GitLab styled TOC.  See `-style` command line option.
+
 ### Fixed
 
 - Generation of TOC with unicode characters

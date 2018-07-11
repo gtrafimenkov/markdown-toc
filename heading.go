@@ -38,17 +38,13 @@ func NewHeadingSE(title string, sep string, index int) *Heading {
 	}
 }
 
-func (h Heading) String() string {
-	return h.string(1)
-}
-
-func (h Heading) string(minDepth int) string {
+// GetMarkdown returns the heading line of the TOC formatted to markdown
+func (h Heading) GetMarkdown(minDepth int, style Style) string {
 	return fmt.Sprintf(
 		"%s- [%s](%s)",
 		strings.Repeat(Indent, h.Depth-minDepth),
 		h.LinkTitle(),
-		h.Anchor(),
-	)
+		h.Anchor(style))
 }
 
 var (
@@ -73,10 +69,17 @@ func (h Heading) LinkTitle() string {
 // \p{Word} = Letter, Mark, Number and Connector_Punctuation
 var rePunct = regexp.MustCompile(`([^\p{L}\p{M}\p{N}\p{Pc}\- ])`)
 
-func (h Heading) Anchor() string {
+func (h Heading) Anchor(style Style) string {
 	// Strip Markdown
 	a := stripmd.Strip(h.Title)
-	a = toLowerASCII(a)
+
+	switch style {
+	case GitHub:
+		a = toLowerASCII(a)
+	case GitLab:
+		a = strings.ToLower(a)
+	}
+
 	a = rePunct.ReplaceAllString(a, "")
 	a = strings.Replace(a, " ", "-", -1)
 	if h.UniqueCounter > 0 {

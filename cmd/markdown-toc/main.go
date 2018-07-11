@@ -29,14 +29,18 @@ const (
 func main() {
 	log.SetFlags(0)
 	flag.Usage = func() {
-		fmt.Println("tocenize [options] FILE...")
+		fmt.Println("markdown-toc [options] FILE...")
 		fmt.Println()
 		flag.PrintDefaults()
 	}
+
+	var styleStr string
+
 	job := tocenize.Job{}
 	flag.IntVar(&job.MinDepth, "min", 1, "minimum depth")
 	flag.IntVar(&job.MaxDepth, "max", 99, "maximum depth")
 	flag.StringVar(&tocenize.Indent, "indent", "\t", "string used for nesting")
+	flag.StringVar(&styleStr, "style", "github", "style of the TOC: github or gitlab")
 	doDiff := flag.Bool("d", false, "print full diff to stdout")
 	doPrint := flag.Bool("p", false, "print full result to stdout")
 	flag.BoolVar(&job.ExistingOnly, "e", false, "update only existing TOC (no insert)")
@@ -51,6 +55,16 @@ func main() {
 		log.Println("too few arguments")
 		flag.Usage()
 		os.Exit(ExitWrongUsage)
+	}
+
+	switch styleStr {
+	case "github":
+		job.Style = tocenize.GitHub
+	case "gitlab":
+		job.Style = tocenize.GitLab
+	default:
+		fmt.Fprintf(os.Stderr, "Unknown style %q", styleStr)
+		os.Exit(1)
 	}
 
 	action := update
@@ -88,7 +102,7 @@ func runAction(path string, job tocenize.Job, action actionFunc) error {
 		return err
 	}
 	toc := tocenize.NewTOC(doc, job)
-	newDoc, err := doc.Update(toc, job.ExistingOnly)
+	newDoc, err := doc.Update(toc, job.ExistingOnly, job.Style)
 	if err != nil {
 		return err
 	}

@@ -21,7 +21,8 @@ updates it in the given file.
 
 - Cross-platform command line utility
   - Windows, Linux, Mac and *bsd (anything the Go compiler will handle)
-- Anchor links are compatible to GFM (Github flavoured Markdown)
+- Anchor links are compatible to GFM (Github flavoured Markdown) and GitLab.  It is configured
+  using `-style` command line option.
 - Automatic "intelligent" insertion of new TOC
 - Update existing TOCs without moving it
 - Configurable max. and min. header depth
@@ -58,16 +59,18 @@ The output of `markdown-toc -h` should be self explanatory:
 ```
 markdown-toc [options] FILE...
 
-  -d    print full diff to stdout
-  -e    update only existing TOC (no insert)
+  -d	print full diff to stdout
+  -e	update only existing TOC (no insert)
   -indent string
-        string used for nesting (default "\t")
+    	string used for nesting (default "\t")
   -max int
-        maximum depth (default 99)
+    	maximum depth (default 99)
   -min int
-        minimum depth (default 1)
-  -p    print full result to stdout
-  -v    print version
+    	minimum depth (default 1)
+  -p	print full result to stdout
+  -style string
+    	style of the TOC: github or gitlab (default "github")
+  -v	print version
 ```
 
 

@@ -20,7 +20,7 @@ func TestDocument_Update(t *testing.T) {
 			tc.T.Fatal(err)
 		}
 		toc := NewTOC(doc, job)
-		newDoc, err := doc.Update(toc, job.ExistingOnly)
+		newDoc, err := doc.Update(toc, job.ExistingOnly, job.Style)
 		if err != nil {
 			tc.T.Fatal(err)
 		}

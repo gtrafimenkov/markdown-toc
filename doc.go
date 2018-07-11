@@ -6,10 +6,22 @@ import (
 	"strings"
 )
 
+// Style describes the style of the TOC we want to produce
+type Style int
+
+const (
+	// GitHub style of the TOC
+	GitHub Style = iota
+
+	// GitLab style of the TOC
+	GitLab
+)
+
 type Job struct {
 	MinDepth     int
 	MaxDepth     int
 	ExistingOnly bool
+	Style        Style
 }
 
 type Document struct {
@@ -45,7 +57,7 @@ func (d Document) String() string {
 	return strings.Join(d.Lines, d.eol)
 }
 
-func (d Document) Update(toc TOC, existingOnly bool) (Document, error) {
+func (d Document) Update(toc TOC, existingOnly bool, style Style) (Document, error) {
 	s, e := d.FindTOC()
 	if s == -1 {
 		if existingOnly {
@@ -58,7 +70,7 @@ func (d Document) Update(toc TOC, existingOnly bool) (Document, error) {
 		nd.Lines = make([]string, s)
 		copy(nd.Lines, d.Lines[:s])
 		for _, tocLine := range toc.Headings {
-			nd.Lines = append(nd.Lines, tocLine.string(toc.MinDepth()))
+			nd.Lines = append(nd.Lines, tocLine.GetMarkdown(toc.MinDepth(), style))
 		}
 		// Add a new line after inserting a new TOC
 		if s == e && len(toc.Headings) > 0 {
