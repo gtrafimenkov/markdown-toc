@@ -7,6 +7,7 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/) and this
 project adheres to [Semantic Versioning](http://semver.org/).
 
 - [Unreleased](#unreleased)
+- [0.0.2 - 2018-07-11](#002---2018-07-11)
 - [0.0.1 - 2018-02-07](#001---2018-02-07)
 
 <!--
@@ -20,6 +21,9 @@ Security   invite users to upgrade in case of vulnerabilities.
 
 [Unreleased]
 ------------
+
+[0.0.2] - 2018-07-11
+--------------------
 
 ### Added
 
