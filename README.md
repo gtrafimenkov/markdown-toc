@@ -31,8 +31,7 @@ Installation
 ------------
 
 ```
-go get -u github.com/gtrafimenkov/markdown-toc
-go install github.com/gtrafimenkov/markdown-toc/cmd/markdown-toc
+go get github.com/gtrafimenkov/markdown-toc/cmd/markdown-toc
 ```
 
 Usage
